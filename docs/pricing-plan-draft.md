@@ -6,15 +6,17 @@
 
 | Service | Package | Proposed total | Deposit | Balance | Status |
 |---|---|---:|---:|---:|---|
-| Basketball photography | Team Coverage | $500 | 50% ($250) | $250 | **DRAFT — not approved for sale** |
+| Basketball photography | Team Game Photography | $350 | 50% ($175) | $175 | **DRAFT — not approved for sale** |
+| Basketball videography | Team Game Video | $500 | 50% ($250) | $250 | **DRAFT — not approved for sale** |
 
-### Team Coverage scope (proposed)
+### Team Game Photography scope (proposed)
 - **Coverage:** One full basketball game, one team.
 - **Deliverables:** Minimum 20 edited photographs.
 - **Turnaround:** Digital gallery delivered within 48 hours after the game.
 - **Client inputs:** Name, email, optional phone, team, date, tipoff time, venue, notes.
 - **Reservation:** Client date request → manual availability check → written terms → deposit request → payment verification → booking confirmed.
 - **No automatic availability promise:** A requested date is not held or confirmed.
+- **Video package scope:** Deliverable type, duration, turnaround, revisions and usage rights are not yet specified; do not reuse photography's 20-image/48-hour terms for video.
 - **No active payment:** Do not create a live Stripe Checkout link, live invoice, or payment button until the owner explicitly authorizes activation.
 - **Before launch:** Confirm travel charges, usage rights, rescheduling/cancellation/refund rules, remaining balance due date, and who handles final approval.
 
@@ -29,7 +31,7 @@ Maintain **one configuration record per package**, rather than sharing Team Cove
 
 ## Current code safeguards
 
-- The existing `team-coverage-booking-preview.html` already shows the $500 / $250 / $250 proposal.
+- The existing `team-coverage-booking-preview.html` on the main branch currently shows the older $500 photography proposal. This draft branch updates the preview to the new $350 / $175 / $175 photography proposal. The separate $500 video proposal is only in this internal plan until video deliverables are agreed.
 - Its request form intentionally prevents submissions; the payment button is disabled.
 - The live `project-inquiry` contact form remains independent and should not be changed as part of this pricing-plan update.
 
