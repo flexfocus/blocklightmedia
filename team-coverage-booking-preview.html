@@ -43,12 +43,12 @@
 <p>Designed for coaches, teams and organizers who want memorable game-day photography.</p>
 <h3>Proposed inclusions — subject to approval</h3>
 <ul class="booking-list">
-<li>Photography coverage of one basketball team's game</li>
-<li>Curated and edited action photographs</li>
-<li>Private digital photo gallery for delivery</li>
+<li>Photography coverage of <strong>one full basketball game</strong> for one team</li>
+<li><strong>Minimum 20 edited photographs</strong> featuring game action and team moments</li>
+<li>Private digital gallery delivered <strong>within 48 hours after the game</strong></li>
 <li>Game date and venue reviewed before confirmation</li>
 </ul>
-<p class="booking-disclaimer">Coverage time, number of delivered images, turnaround, usage rights, travel fees, cancellation terms and remaining balance deadline must be finalized before any booking goes live.</p>
+<p class="booking-disclaimer">These coverage, image count and turnaround terms are proposed, not yet approved. Usage rights, travel fees, cancellation and rescheduling terms, and the remaining balance deadline must be finalized before any booking goes live.</p>
 <h3>Try the scheduling form (local demo only)</h3>
 <form id="draftBooking">
 <div class="booking-fields">
@@ -63,7 +63,7 @@
 </form>
 </section>
 <aside class="booking-panel" aria-label="Proposed price summary">
-<h2>Price Breakdown</h2>
+<h2>Proposed Package Summary</h2><p>One full basketball game · At least 20 edited photos · Delivered within 48 hours</p>
 <div class="price-row"><span>Team Coverage</span><strong>$500</strong></div>
 <div class="price-row deposit"><span>Proposed 50% deposit</span><strong>$250</strong></div>
 <div class="price-row"><span>Remaining balance</span><strong>$250</strong></div>
@@ -83,7 +83,7 @@ form.addEventListener('submit',function(event){
 event.preventDefault();
 const data=new FormData(form);
 result.style.display='block';
-result.textContent='DEMO ONLY — no request has been sent.\n\nTeam: '+data.get('team')+'\nDate: '+data.get('gameDate')+'\nTipoff: '+data.get('tipoff')+'\nVenue: '+data.get('venue')+'\n\nProposed total: $500 | Deposit: $250 | Balance: $250\n\nAvailability, pricing and payment are pending approval.';
+result.textContent='DEMO ONLY — no request has been sent.\n\nTeam: '+data.get('team')+'\nDate: '+data.get('gameDate')+'\nTipoff: '+data.get('tipoff')+'\nVenue: '+data.get('venue')+'\n\nOne full game | At least 20 edited photos | Delivery within 48 hours\nProposed total: $500 | Deposit: $250 | Balance: $250\n\nAvailability, pricing and payment are pending approval.';
 });
 })();
 </script>
