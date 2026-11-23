@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Team Coverage Booking Concept | Block Light Media</title>
+<meta name="description" content="Internal draft of a proposed basketball team photography booking experience. Not available for purchase.">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.draft-note{background:#d0f568;color:#101414;padding:12px 5vw;text-align:center;font-weight:700}
+.booking-shell{max-width:1120px;margin:0 auto;padding:clamp(32px,6vw,90px) 22px 95px}
+.booking-intro{max-width:780px;margin-bottom:38px}.booking-intro h1{font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.06;margin:8px 0 16px;letter-spacing:-.045em}.booking-intro p{color:#535d5a}
+.booking-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:24px;align-items:start}
+.booking-panel{background:#fff;border:1px solid #d8dbd5;border-radius:17px;padding:clamp(20px,3vw,36px);box-shadow:0 8px 32px #1115160a}
+.booking-panel h2{margin:0 0 18px;font-size:1.35rem}.booking-panel h3{font-size:1rem;margin:28px 0 12px}
+.booking-list{padding-left:20px}.booking-list li{margin-bottom:9px}
+.booking-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.booking-fields label{font-weight:700;font-size:.88rem;display:flex;flex-direction:column;gap:7px}
+.booking-fields input,.booking-fields textarea{width:100%;padding:12px 13px;border:1px solid #bfc9c4;background:#fff;border-radius:8px;color:#111516}
+.booking-fields .wide{grid-column:1/-1}
+.price-row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #e0e4de}.price-row strong{font-size:1.2rem}.price-row.deposit strong{font-size:1.7rem}.deposit{color:#263b0e}
+.booking-action{display:block;width:100%;text-align:center;background:#111516;color:#fff;padding:16px 18px;border-radius:10px;margin-top:24px;font-weight:700}
+.booking-action:disabled{background:#9ca6a0;cursor:not-allowed}
+.booking-disclaimer{color:#4f5c55;font-size:.85rem;margin-top:17px}
+.preview-result{display:none;border:1px solid #b9c7b4;border-radius:10px;background:#f2f9e4;padding:17px;margin-top:18px;white-space:pre-wrap}
+.status-chip{display:inline-flex;padding:5px 11px;border:1px solid #889787;border-radius:99px;font-size:.74rem;font-weight:700;letter-spacing:.07em}
+@media(max-width:780px){.booking-grid{grid-template-columns:1fr}.booking-fields{grid-template-columns:1fr}.booking-fields .wide{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="draft-note">INTERNAL DESIGN PREVIEW · NOT A LIVE BOOKING OR PAYMENT PAGE</div>
+<header class="site-header"><a class="wordmark" href="/index.html" aria-label="Block Light Media homepage"><span class="mark">BL<span class="mark-dot">.</span></span><span class="wordmark-text">BLOCK LIGHT<br><small>MEDIA / CREATIVE PRODUCTION</small></span></a><a style="color:white" href="/basketball-photographer-reading-pa.html">← Basketball Photography</a></header>
+<main class="booking-shell">
+<section class="booking-intro">
+<span class="status-chip">DRAFT · AWAITING OWNER APPROVAL</span>
+<p class="eyebrow">BASKETBALL PHOTOGRAPHY · TEAM COVERAGE</p>
+<h1>Game day, captured for the whole team.</h1>
+<p>Explore this proposed booking experience for a single basketball team's game coverage. Package terms, availability and price are not active or approved.</p>
+</section>
+<div class="booking-grid">
+<section class="booking-panel" aria-labelledby="package-title">
+<h2 id="package-title">Team Coverage Package</h2>
+<p>Designed for coaches, teams and organizers who want memorable game-day photography.</p>
+<h3>Proposed inclusions — subject to approval</h3>
+<ul class="booking-list">
+<li>Photography coverage of one basketball team's game</li>
+<li>Curated and edited action photographs</li>
+<li>Private digital photo gallery for delivery</li>
+<li>Game date and venue reviewed before confirmation</li>
+</ul>
+<p class="booking-disclaimer">Coverage time, number of delivered images, turnaround, usage rights, travel fees, cancellation terms and remaining balance deadline must be finalized before any booking goes live.</p>
+<h3>Try the scheduling form (local demo only)</h3>
+<form id="draftBooking">
+<div class="booking-fields">
+<label>Preferred game date<input type="date" name="gameDate" required></label>
+<label>Tipoff time<input type="time" name="tipoff" required></label>
+<label class="wide">Venue / city<input name="venue" type="text" maxlength="160" placeholder="Gym name, city and state" required></label>
+<label class="wide">Team name<input name="team" type="text" maxlength="100" placeholder="Team to photograph" required></label>
+<label class="wide">Coverage notes<textarea name="notes" rows="3" maxlength="500" placeholder="Optional special requests"></textarea></label>
+</div>
+<button class="booking-action" type="submit">Preview Booking Request (No Submission)</button>
+<div class="preview-result" id="bookingResult" role="status" aria-live="polite"></div>
+</form>
+</section>
+<aside class="booking-panel" aria-label="Proposed price summary">
+<h2>Price Breakdown</h2>
+<div class="price-row"><span>Team Coverage</span><strong>$500</strong></div>
+<div class="price-row deposit"><span>Proposed 50% deposit</span><strong>$250</strong></div>
+<div class="price-row"><span>Remaining balance</span><strong>$250</strong></div>
+<p class="booking-disclaimer"><strong>No charges can be made here.</strong> Stripe Checkout is intentionally not connected. The dates shown are preferences, not live availability.</p>
+<button class="booking-action" disabled type="button">Pay Deposit — Not Activated</button>
+<p class="booking-disclaimer">Planned live flow: request a date → owner approves availability and written terms → customer accepts agreement → secure Stripe deposit → booking confirmation.</p>
+</aside>
+</div>
+</main>
+<script>
+(function(){
+const form=document.getElementById('draftBooking');
+const result=document.getElementById('bookingResult');
+const date=form.elements.gameDate;
+date.min=new Date().toLocaleDateString('en-CA');
+form.addEventListener('submit',function(event){
+event.preventDefault();
+const data=new FormData(form);
+result.style.display='block';
+result.textContent='DEMO ONLY — no request has been sent.\n\nTeam: '+data.get('team')+'\nDate: '+data.get('gameDate')+'\nTipoff: '+data.get('tipoff')+'\nVenue: '+data.get('venue')+'\n\nProposed total: $500 | Deposit: $250 | Balance: $250\n\nAvailability, pricing and payment are pending approval.';
+});
+})();
+</script>
+</body></html>
