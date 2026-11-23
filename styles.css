@@ -149,3 +149,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 @media(max-width:950px){.hero{height:auto;max-height:none;min-height:0}.hero-content{width:100%;padding:80px 6vw 32px}.hero-content h1{font-size:clamp(51px,9vw,90px)}.hero-feature{position:relative;transform:none;right:auto;top:auto;margin:0 6vw 105px;width:auto;max-width:750px}.real-work-grid{grid-template-columns:1fr}.real-work-other{grid-template-columns:repeat(3,1fr)}.real-work-tile{min-height:170px}}
 @media(max-width:650px){.hero-feature{margin-bottom:95px}.hero-content{padding-top:60px}.real-work-other{grid-template-columns:1fr}.real-work-tile{min-height:130px}.hero-feature-top .eyebrow{font-size:9px}.channel-links{grid-template-columns:1fr 1fr}.channel-links a{min-height:108px}}
 @media(prefers-reduced-motion:reduce){.real-work-spotlight,.hero-feature{scroll-behavior:auto}}
+
+/* Draft homepage game coverage cards */
+.booking-showcase{background:#101414;color:#f7f8f2}
+.booking-showcase .section-heading{align-items:end}
+.booking-showcase .section-heading h2 em{color:#d0f568}
+.booking-showcase .section-heading p{max-width:610px;color:#c5d0ca}
+.booking-showcase .text-link{color:#d0f568}
+.booking-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.booking-price-card{display:flex;flex-direction:column;background:#1b2422;padding:clamp(22px,3vw,42px);border:1px solid #4e5c56}
+.booking-price-card .eyebrow{color:#c9f0a1}
+.booking-price-card h3{font-size:clamp(25px,3vw,42px);margin:12px 0 17px;color:#fff}
+.booking-price{display:flex;flex-direction:column;margin:8px 0 19px;gap:3px}
+.booking-price-label{font-size:12px;letter-spacing:.03em;color:#bbc9c0}
+.booking-price strong{font-family:'Space Grotesk';font-size:clamp(48px,5vw,80px);letter-spacing:-.07em;line-height:1}
+.booking-price-card ul{padding-left:22px;margin:5px 0 24px;color:#d6ded8}
+.booking-price-card li{margin-bottom:10px}
+.booking-card-bottom{margin-top:auto;border-top:1px solid #48554d;padding-top:22px}
+.booking-card-bottom p{font-size:14px;color:#d2dfd3;margin:0 0 20px}
+.booking-card-bottom p strong{color:#fff}
+.booking-card-bottom .button{width:100%;justify-content:space-between}
+.booking-notice{font-size:13px;max-width:940px;color:#aab8ad;margin:21px 0 0}
+@media(max-width:760px){.booking-cards{grid-template-columns:1fr}.booking-price-card{padding:24px}}
