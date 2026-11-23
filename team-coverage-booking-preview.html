@@ -49,17 +49,25 @@
 <li>Game date and venue reviewed before confirmation</li>
 </ul>
 <p class="booking-disclaimer">These coverage, image count and turnaround terms are proposed, not yet approved. Usage rights, travel fees, cancellation and rescheduling terms, and the remaining balance deadline must be finalized before any booking goes live.</p>
-<h3>Try the scheduling form (local demo only)</h3>
-<form id="draftBooking">
+<h3>Request your game date — proposed inquiry flow</h3>
+<p class="booking-disclaimer">When enabled after your approval, this form will send a date request for manual review. Submitting a request does not reserve a date or authorize payment.</p>
+<form id="draftBooking" name="team-coverage-request" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="team-coverage-request">
+<input type="hidden" name="package" value="Team Coverage basketball photography — draft $500 package">
+<p class="hidden-field" style="display:none"><label>Leave blank <input name="bot-field"></label></p>
 <div class="booking-fields">
+<label>Full name<input type="text" name="full-name" autocomplete="name" maxlength="100" required placeholder="Your name"></label>
+<label>Email address<input type="email" name="email" autocomplete="email" maxlength="180" required placeholder="you@example.com"></label>
+<label class="wide">Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="Best number to reach you"></label>
 <label>Preferred game date<input type="date" name="gameDate" required></label>
 <label>Tipoff time<input type="time" name="tipoff" required></label>
 <label class="wide">Venue / city<input name="venue" type="text" maxlength="160" placeholder="Gym name, city and state" required></label>
 <label class="wide">Team name<input name="team" type="text" maxlength="100" placeholder="Team to photograph" required></label>
 <label class="wide">Coverage notes<textarea name="notes" rows="3" maxlength="500" placeholder="Optional special requests"></textarea></label>
 </div>
-<button class="booking-action" type="submit">Preview Booking Request (No Submission)</button>
-<div class="preview-result" id="bookingResult" role="status" aria-live="polite"></div>
+<label style="display:flex;align-items:flex-start;gap:10px;margin-top:18px;font-size:.87rem"><input type="checkbox" name="contact-consent" required style="width:auto;margin-top:5px"> I agree to be contacted about this date request. This is not a confirmed booking.</label>
+<button class="booking-action" type="submit">Request Date (Draft — Not Activated)</button>
+<p class="booking-disclaimer">For the production version, the submission will be saved in Netlify Forms and you will review availability before any payment. No Stripe connection is present here.</p>
 </form>
 </section>
 <aside class="booking-panel" aria-label="Proposed price summary">
@@ -76,14 +84,14 @@
 <script>
 (function(){
 const form=document.getElementById('draftBooking');
-const result=document.getElementById('bookingResult');
 const date=form.elements.gameDate;
-date.min=new Date().toLocaleDateString('en-CA');
+const now=new Date();
+const localDate=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');
+date.min=localDate;
+// This draft must not submit inquiries until the owner explicitly authorizes activation.
 form.addEventListener('submit',function(event){
-event.preventDefault();
-const data=new FormData(form);
-result.style.display='block';
-result.textContent='DEMO ONLY — no request has been sent.\n\nTeam: '+data.get('team')+'\nDate: '+data.get('gameDate')+'\nTipoff: '+data.get('tipoff')+'\nVenue: '+data.get('venue')+'\n\nOne full game | At least 20 edited photos | Delivery within 48 hours\nProposed total: $500 | Deposit: $250 | Balance: $250\n\nAvailability, pricing and payment are pending approval.';
+ event.preventDefault();
+ alert('Draft only: no request has been sent. Booking requests will be activated only after owner approval.');
 });
 })();
 </script>
