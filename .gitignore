@@ -1,0 +1,6 @@
+# Private Stripe credentials and local Netlify env files must never be committed.
+.env
+.env.*
+!.env.example
+node_modules/
+.netlify/
