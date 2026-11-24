@@ -1,31 +1,35 @@
-# Basketball booking calendar — implementation checklist
+# Basketball booking calendar — TidyCal Free setup
 
-Status: DRAFT ONLY. No live availability feed or deposit collection has been connected in this PR. The public Book Now buttons remain unchanged, and there are no invented availability slots.
+Status: **DRAFT ONLY**. This proposed site page contains no made-up availability or live deposit collection until verified TidyCal URLs are configured. Calendly Free does not support Stripe bookings. Leave existing live booking and Sweet 16 buttons unchanged.
 
-## Approved services and deposits
-| Calendly event type | Full package | Deposit taken at booking | Remaining balance |
-|---|---:|---:|---:|
+## Packages (50% booking payment)
+
+| TidyCal Booking type | Package total | Set TidyCal "Per booking" price to | Collect remaining separately |
+| --- | ---: | ---: | ---: |
 | Player Game Photos | $200 | $100 | $100 |
 | Team Game Photos | $300 | $150 | $150 |
 | Player Highlight Video | $300 | $150 | $150 |
 | Team Highlight Video | $400 | $200 | $200 |
 
-Configure the payment amount in **Calendly event settings connected to Stripe**. The displayed prices in HTML are informational and do NOT set the actual checkout amount.
+**TidyCal does NOT offer native partial-payment/deposit accounting.** Charge the deposit figure as the booking's entire up-front TidyCal price, clearly explain that it is a 50% booking deposit toward the full service cost, and invoice the remaining balance later. Do not present this as TidyCal automatically tracking the unpaid remainder.
 
-## Required external setup
-1. Create/connect a **Calendly** account, with a plan supporting **multiple event types and Stripe payments** (typically Standard or above; verify current plan requirements).
-2. Connect the actual filming calendar, and block days with existing commitments. Set realistic operating hours, travel limits, minimum booking notice, cancellation window, and time between games. Bookings generally need a game-length slot, arrival time and travel buffer (not just a 15-minute meeting).
-3. Create four paid Calendly event types matching the table, collecting the deposit amounts above. Ensure all are **one host : one client booking**, not group event types that let multiple clients reserve your only camera at once.
-4. For each event type add intake questions: athlete name and jersey number (if relevant), school/team, opponent, game date, **game tipoff time**, gym or venue name and full address, organizer contact, any gym/media permission restrictions, and important coverage expectations. **The chosen calendar slot must correspond to the real game start/coverage window**; default generic meeting slots may not match actual games.
-5. Confirm Stripe deposit collection is enabled for every event type. Check that live tax settings and refund/cancellation policies are legally appropriate before collecting.
-6. Copy four specific Calendly event-type URLs (e.g. https://calendly.com/YOURACCOUNT/PLAYER-PHOTOS). Insert them in `basketball-booking.js` > `BOOKING_LINKS`. Only exact `https://calendly.com` or subdomain HTTPS URLs are allowed. If a URL is missing, the page deliberately shows the existing quote form fallback.
-7. In Calendly, run a **live (or safe test if supported) booking check** for every service to verify the customer's selected date/time and Stripe charge. Booking confirmation is owned by Calendly; website never trusts client-side events as proof of payment.
-8. After all four work, remove `noindex,nofollow` if desired, expose links from the basketball photography/videography landing pages and homepage, and merge this PR.
+## Free-plan features
 
-## Booking model
-- Default proposed booking slot: approximately 2–2.5 hours for one full game **plus travel buffers**. Confirm actual games, venue, location and contractual terms first.
-- Do NOT send clients from Calendly to a second Stripe Payment Link, or they may pay twice. Calendly-connected Stripe payment is the one booking transaction.
-- For remaining balance, use a per-customer Stripe invoice reflecting deposit already paid.
-- This design does not automatically prevent simultaneous bookings if the host calendar is not kept updated or if two scheduling tools use separate calendars.
-- Existing site-wide Stripe links and Sweet 16 link are unaffected.
-- A partial deposit can automatically lock a game time *only when* the calendars and payment settings are configured consistently. Don't advertise real-time booking before testing.
+- Unlimited booking types, one synced calendar, custom intake questions, a website embed, and paid bookings through Stripe or PayPal.
+- Free-plan Stripe bookings incur TidyCal's **1% platform fee** in addition to Stripe processing, normally paid by the client as an added fee on the checkout. Confirm that total is acceptable to customers.
+- TidyCal Free displays TidyCal branding in the embed.
+- Verify tax collection obligations and a written cancellation/refund policy before inviting live bookings.
+
+## Setup
+
+1. Create an account on https://tidycal.com/pricing using Free. Under Integrations → Calendars connect your actual working calendar for conflict checks and bookings. Check the calendar is set to mark busy events Busy, not Free.
+2. Integrations → Payments: connect the existing Block Light Media Stripe account through TidyCal. Make sure the expected account is connected.
+3. Create **four booking types**, one per package, set to individual, not group bookings. Use 150 minutes as an initial game-length slot plus realistic buffers and travel constraints. The current draft only *displays* that duration until the actual scheduler is connected. Basketball clients may need to select the tipoff and details instead of an arbitrary office-hour slot; tailor availability accordingly.
+4. For each booking type, choose Pricing & Subscriptions → **Per booking** → Stripe → USD price **equal to the deposit** from the table. Name/description must state package total, booking deposit, and remaining balance outside TidyCal; e.g. "Player Game Photos — $200 package, $100 charged at booking, $100 due before delivery".
+5. Add required intake questions: game date and tipoff, team/athlete and jersey number (if relevant), opponent, gym/venue and full address, requested deliverables, permission to film. Ask a customer to acknowledge your terms and refund policy.
+6. Configure genuine game-day availability, travel buffers, and blocked dates. Beware weekday 9–5 default schedules and overlapping bookings.
+7. In TidyCal Booking types → three-dot menu → **Embed on website**, copy the individual URL for each type. Put the four real URLs in `basketball-booking.js` `BOOKING_LINKS` (example: https://tidycal.com/account/player-game-photos). Only exact HTTPS tidycal.com links are allowed. The website embeds TidyCal via its official script `https://asset-tidycal.b-cdn.net/js/embed.js`.
+8. Verify a booking with a payment for each type, including correct date/time zone, deposit and fee totals, Stripe payment status, confirmation, and no double-booked slot. Confirm cancellation and payment refund workflows.
+9. Once fully tested, consider removing `noindex,nofollow`, linking the basketball CTAs to `/basketball-booking.html`, and merging/deploying this PR.
+
+The booking page deliberately keeps a "Request Game Availability" fallback until the links are configured and checked. Avoid sending a separate Stripe payment link after a TidyCal paid booking or you risk double-charging.
