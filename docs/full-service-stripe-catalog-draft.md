@@ -24,22 +24,22 @@ The suggested number of edited photos, video length, turnaround and inclusion of
 
 The bundle saves clients $200 versus separate bookings, but may require a second shooter, limited coverage or a specific schedule; clarify before offering.
 
-## Other photography services — unapproved proposals
+## Other photography services — six owner-approved fixed packages; large productions custom-quoted
 
 | Service | Proposed starting/full price | Booking method |
 |---|---:|---|
-| Corporate Headshots | $200 | Fixed-scope booking |
-| Graduation Photography | $250 | Fixed-scope booking |
-| Real Estate Photography | $300 | Fixed-scope booking |
-| Family Portraits | $300 | Fixed-scope booking |
-| Maternity Photography | $350 | Fixed-scope booking |
-| Personal Branding Photography | $450 | Fixed-scope booking |
-| Event Photography | From $450 | Quote larger events |
-| Product Photography | From $500 | Custom quote |
-| Commercial Photography | From $600 | Custom quote |
-| Wedding Photography | From $1,800 | Custom quote |
+| Corporate Headshots | $250 | Approved fixed-scope booking · $125 deposit / $125 balance |
+| Graduation Photography | $250 | Approved fixed-scope booking · $125 deposit / $125 balance |
+| Real Estate Photography | $250 | Approved fixed-scope booking · $125 deposit / $125 balance |
+| Family Portraits | $300 | Approved fixed-scope booking · $150 deposit / $150 balance |
+| Maternity Photography | $300 | Approved fixed-scope booking · $150 deposit / $150 balance |
+| Personal Branding Photography | $400 | Approved fixed-scope booking · $200 deposit / $200 balance |
+| Event Photography | Custom quote (reference from $450, not approved as public price) | Quote first |
+| Product Photography | Custom quote (reference from $500, not approved as public price) | Quote first |
+| Commercial Photography | Custom quote (reference from $600, not approved as public price) | Quote first |
+| Wedding Photography | Custom quote (reference from $1,800, not approved as public price) | Quote first |
 
-Do not create products at these suggested amounts until the owner approves each.
+**Owner approval dated 2026-11-23:** Corporate Headshots $250; Graduation Photography $250; Family Portraits $300; Real Estate Photography $250; Maternity Photography $300; Personal Branding Photography $400. The amounts are approved, but final shoot durations, deliverables, licensing and terms still need confirmation before publishing checkout links. Larger event and commercial photography remain quote-first; reference price estimates are not public fixed-price products.
 
 ## Videography pricing — latest discussion
 
@@ -107,7 +107,7 @@ Scope, travel, overtime, crew, rush edits, music licenses, archival/raw footage,
 
 ## Approval checklist
 
-1. Confirm remaining photography prices and the exact package scope, filming limits and deliverables for all approved video starting rates.
+1. Six standard photography package prices are approved; confirm durations, number of edits, timelines, usage and cancellation terms. Larger events and commercial work stay custom-quoted.
 2. Confirm exact duration, session count, video/photo deliverables, resolution, turnaround, revisions and whether raw files are included.
 3. Establish date-approval workflow; contracts, changes/cancellations/refunds, travel radius, second shooter rules and due date for final balances.
 4. Confirm legal/account status, sales tax registration and each service's actual tax treatment.
