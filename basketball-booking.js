@@ -19,7 +19,7 @@
   });
 
   const cards = [...document.querySelectorAll('[data-package]')];
-  const embed = document.getElementById('booking-calendly');
+  const embed = document.getElementById('booking-tidycal');
   const fallback = document.getElementById('booking-unavailable');
   const summary = document.getElementById('booking-selected-summary');
   const contact = document.getElementById('booking-fallback');
