@@ -1,0 +1,12 @@
+{
+  "name": "blocklightmedia-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static Netlify website with a server-side Stripe Checkout function",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "stripe": "^22.0.0"
+  }
+}
