@@ -108,3 +108,12 @@
 .hub-reel-frame .instagram-media a{display:block;text-align:center;color:#365a29;padding:18px}
 .hub-reel-content p{color:#536256;font-size:12px;margin:0 0 12px;line-height:1.45}
 @media(max-width:580px){.hub-reel-frame{min-height:470px;padding:4px}.hub-reel-grid{gap:18px}}
+
+/* Sports: one compact film gallery, rather than separate featured/extra sections. */
+.hub-sports-films{padding-top:clamp(55px,6vw,85px);padding-bottom:clamp(55px,6vw,85px)}
+.hub-video-grid.hub-video-grid--sports{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.hub-sports-films .hub-video-content{padding:16px 18px 20px}
+.hub-sports-films .hub-video-content h3{font-size:clamp(17px,1.8vw,21px);line-height:1.25;margin:7px 0 12px}
+.hub-sports-films .hub-video-content h3 a{font-size:inherit;line-height:inherit}
+@media(max-width:950px){.hub-video-grid.hub-video-grid--sports{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.hub-video-grid.hub-video-grid--sports{grid-template-columns:1fr}}
