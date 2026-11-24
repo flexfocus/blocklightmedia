@@ -117,3 +117,22 @@
 .hub-sports-films .hub-video-content h3 a{font-size:inherit;line-height:inherit}
 @media(max-width:950px){.hub-video-grid.hub-video-grid--sports{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.hub-video-grid.hub-video-grid--sports{grid-template-columns:1fr}}
+
+/* Sports social call-to-action: quick path to Instagram instead of unreliable embeds */
+.sports-social-section{padding:clamp(68px,7vw,110px) clamp(20px,8vw,125px);background:#e9ede6}
+.sports-social-intro{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
+.sports-social-intro h2{font-size:clamp(36px,5.3vw,70px);line-height:1.03;margin:14px 0}
+.sports-social-intro h2 em{color:#496e37}
+.sports-social-intro p:not(.eyebrow){max-width:490px;color:#536159}
+.sports-social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.sports-social-card{position:relative;overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(23px,3vw,38px);color:#f3f8f2;background:radial-gradient(circle at 82% 13%,#315844 0%,transparent 42%),linear-gradient(130deg,#162b22,#0c1712);border:1px solid #355340;transition:transform .25s,border-color .25s}
+.sports-social-card--focus{background:radial-gradient(circle at 85% 10%,#675038 0%,transparent 43%),linear-gradient(130deg,#282218,#151a16)}
+.sports-social-card:hover{transform:translateY(-4px);border-color:#99d75b}
+.sports-social-tag{font-size:10px;letter-spacing:.18em;font-weight:700;color:#d0f568}
+.sports-social-handle{font-size:13px;color:#d0f568;font-weight:700}
+.sports-social-card h3{font:700 clamp(32px,4vw,51px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.04em;margin:6px 0 10px}
+.sports-social-card p{font-size:14px;color:#c5d1c4;max-width:380px}
+.sports-social-link{display:inline-block;font-size:13px;font-weight:700;color:#d0f568;margin-top:14px}
+.sports-social-link span{margin-left:6px}
+@media(max-width:720px){.sports-social-intro,.sports-social-grid{grid-template-columns:1fr}.sports-social-card{min-height:275px}}
+@media(prefers-reduced-motion:reduce){.sports-social-card{transition:none}}
