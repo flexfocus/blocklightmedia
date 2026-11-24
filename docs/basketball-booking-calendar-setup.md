@@ -33,3 +33,16 @@ Status: **DRAFT ONLY**. This proposed site page contains no made-up availability
 9. Once fully tested, consider removing `noindex,nofollow`, linking the basketball CTAs to `/basketball-booking.html`, and merging/deploying this PR.
 
 The booking page deliberately keeps a "Request Game Availability" fallback until the links are configured and checked. Avoid sending a separate Stripe payment link after a TidyCal paid booking or you risk double-charging.
+
+## Staged booking URLs (unverified)
+
+These four user-provided URLs are wired to the package selector in a draft branch. Their public booking pages and actual payment configurations could not be verified from public sources; **do not enable public booking calls-to-action until tested**.
+
+| Package | URL | Expected booking payment |
+| --- | --- | ---: |
+| Player Game Photos | https://tidycal.com/felixdlr4/player-game-photos | $100 |
+| Team Game Photos | https://tidycal.com/felixdlr4/team-game-photography | $150 |
+| Player Highlight Video | https://tidycal.com/felixdlr4/player-highlight-video | $150 |
+| Team Highlight Video | https://tidycal.com/felixdlr4/eam-highlight-video | $200 |
+
+**Check the fourth slug**: `eam-highlight-video` is exactly as supplied, but may be missing a leading `t`. Do not silently rewrite it without confirming the URL displayed by TidyCal. Also verify booked duration, calendar conflicts, correct location questions, price (and any extra processing/platform fee), and Stripe account before merging. The booking page remains `noindex` and is not linked by the site's main public CTAs.
