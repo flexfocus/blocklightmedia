@@ -53,8 +53,8 @@ Do not create products at these suggested amounts until the owner approves each.
 | Music Video — Cinematic / Enhanced | $600 | Owner selected | Fixed package |
 | Event Highlight Video | $500–$1,000 | Owner selected range | Tiered coverage or quote |
 | Podcast / Interview Production | $500 | Owner selected | Fixed package |
-| Brand Content Production | From $1,200/month | Assistant recommendation, **approval needed** | Monthly retainer |
-| Corporate Video Production | From $1,500 | Assistant recommendation, **approval needed** | Custom quote |
+| Brand Content Production | From $1,200/month | Owner approved starting price; package scope pending | Monthly retainer |
+| Corporate Video Production | From $1,500 | Owner approved starting price; scope quoted | Custom quote |
 | Commercial Video Production | From $2,000 | Assistant recommendation, **approval needed** | Custom quote |
 | Sports Tournament Production | From $1,500/weekend | Owner selected starting rate | **Custom quote** |
 | Wedding Videography | From $2,000 | Owner-selected starting reference | **Custom quote** |
@@ -69,9 +69,9 @@ The catalog contains 12 primary video-service pages; the run-and-gun/cinematic a
 | Growth | $1,650/month | 6 | $275 | Up to 2 pre-scheduled sessions |
 | Premium | $2,250/month | 9 | $250 | Up to 3 pre-scheduled sessions |
 
-**Only 3 videos for $900 has been selected by the owner; all session durations, other tiers and terms need approval.** Proposed standard deliverable: 15–45-second vertical Reel/TikTok; 1 minor revision, one location, filming scheduled in advance, delivery schedule agreed in writing. These rates do not include paid advertising, account management, ad spend, posting or unlimited revisions. Prefer an initial 3-month retainer agreement with monthly invoices and clear cancellation/rescheduling rules. Monthly retention should not be sold as three separate shooting days for the 3-pack.
+**Owner approved the proposed restaurant pricing direction and tiers; filming time limits, delivery schedules and contractual terms still require confirmation.** Proposed standard deliverable: 15–45-second vertical Reel/TikTok; 1 minor revision, one location, filming scheduled in advance, delivery schedule agreed in writing. These rates do not include paid advertising, account management, ad spend, posting or unlimited revisions. Prefer an initial 3-month retainer agreement with monthly invoices and clear cancellation/rescheduling rules. Monthly retention should not be sold as three separate shooting days for the 3-pack.
 
-### Brand content retainer — assistant proposal, not approved
+### Brand content retainer — owner approved starting price, detailed scope pending
 
 - **$1,200/month** for **4 short-form vertical videos**, shot in **one organized monthly production session**; one round of minor revisions per video.
 - Offer extras, such as photography, additional shoot dates, scripting/creative direction, long-form edits or paid ad licensing, via individually quoted add-ons.
@@ -107,7 +107,7 @@ Scope, travel, overtime, crew, rush edits, music licenses, archival/raw footage,
 
 ## Approval checklist
 
-1. Confirm all unapproved photography prices and the suggested standalone restaurant video, retainer tiers, brand content, corporate and commercial rates.
+1. Confirm remaining photography prices and the exact package scope, filming limits and deliverables for all approved video starting rates.
 2. Confirm exact duration, session count, video/photo deliverables, resolution, turnaround, revisions and whether raw files are included.
 3. Establish date-approval workflow; contracts, changes/cancellations/refunds, travel radius, second shooter rules and due date for final balances.
 4. Confirm legal/account status, sales tax registration and each service's actual tax treatment.
