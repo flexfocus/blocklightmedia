@@ -91,6 +91,34 @@
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
   }
 
+
+  /* Portfolio video gallery: load YouTube only after visitor presses play. */
+  const videoDialog = document.getElementById('showcaseVideoDialog');
+  const videoPlayer = document.getElementById('showcaseDialogPlayer');
+  const videoLink = document.getElementById('showcaseDialogLink');
+  if (videoDialog && videoPlayer && videoLink && typeof videoDialog.showModal === 'function') {
+    const allowedIds = new Set(["oDHfoNzikMs","y_e1PIe9Qqs","ly8tHvCf37g","edYa5RIaICA","erreYvxjd5o","piOQQNpDo6w","YJ_BChpk0Ms"]);
+    document.querySelectorAll('[data-youtube-id]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.getAttribute('data-youtube-id');
+        if (!allowedIds.has(id)) return;
+        const frame = document.createElement('iframe');
+        frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+        frame.title = button.getAttribute('aria-label') || 'Portfolio video';
+        frame.allow = 'autoplay; encrypted-media; gyroscope; picture-in-picture; web-share';
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+        videoPlayer.replaceChildren(frame);
+        videoLink.href = 'https://www.youtube.com/watch?v=' + id;
+        videoDialog.showModal();
+      });
+    });
+    const closeVideo = () => { if (videoDialog.open) videoDialog.close(); };
+    videoDialog.querySelector('[data-close-video]').addEventListener('click', closeVideo);
+    videoDialog.addEventListener('close', () => videoPlayer.replaceChildren());
+    videoDialog.addEventListener('click', (event) => { if (event.target === videoDialog) closeVideo(); });
+  }
+
   /* ── Future integrations ──
      window.BLM_INTEGRATIONS is intentionally empty. When a scheduling,
      payment, contract, social or storefront provider is connected, register a
