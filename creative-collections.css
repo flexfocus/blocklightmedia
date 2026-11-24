@@ -101,3 +101,10 @@
 @media(max-width:650px){.home-selection-inner{padding-top:64px;padding-bottom:72px}.home-selection-choices{gap:16px;margin-top:32px}.home-choice{min-height:280px;padding:27px}.home-choice-hint{display:none}.home-choice:hover .home-photo-stack img{animation:none}.home-choice:hover .home-photo-stack img:not(:first-child){opacity:0}}
 @media(hover:none){.home-choice:hover .home-photo-stack img{animation:none}.home-choice:hover .home-photo-stack img:not(:first-child){opacity:0}}
 @media(prefers-reduced-motion:reduce){.home-choice:hover .home-photo-stack img{animation:none}.home-choice:hover .home-photo-stack img:not(:first-child){opacity:0}.home-choice,.home-choice-media>img,.home-photo-stack img{transition:none}}
+
+/* Instagram's official embedded Reel blockquotes: visible on the Sports page. */
+.hub-reel-frame{aspect-ratio:auto;min-height:510px;max-width:none;display:flex;align-items:flex-start;justify-content:center;background:#fafbf9;overflow:hidden;padding:8px}
+.hub-reel-frame .instagram-media{width:100%!important;max-width:100%!important;min-width:0!important;margin:0 auto!important}
+.hub-reel-frame .instagram-media a{display:block;text-align:center;color:#365a29;padding:18px}
+.hub-reel-content p{color:#536256;font-size:12px;margin:0 0 12px;line-height:1.45}
+@media(max-width:580px){.hub-reel-frame{min-height:470px;padding:4px}.hub-reel-grid{gap:18px}}
