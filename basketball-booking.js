@@ -6,10 +6,10 @@
   'use strict';
 
   const BOOKING_LINKS = Object.freeze({
-    'individual-photo': '', // https://tidycal.com/YOURNAME/player-game-photos
-    'team-photo': '',       // https://tidycal.com/YOURNAME/team-game-photos
-    'individual-video': '', // https://tidycal.com/YOURNAME/player-highlight-video
-    'team-video': ''        // https://tidycal.com/YOURNAME/team-highlight-video
+    'individual-photo': 'https://tidycal.com/felixdlr4/player-game-photos',
+    'team-photo': 'https://tidycal.com/felixdlr4/team-game-photography',
+    'individual-video': 'https://tidycal.com/felixdlr4/player-highlight-video',
+    'team-video': 'https://tidycal.com/felixdlr4/eam-highlight-video' // User-provided slug; verify it is intended.
   });
   const PACKAGE_INFO = Object.freeze({
     'individual-photo': { name: 'Player Game Photos', deposit: 100, type: 'basketball-photographer-reading-pa' },
