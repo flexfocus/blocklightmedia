@@ -199,3 +199,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .showcase-project-links a{font-size:12px;font-weight:700}
 .showcase-project-links .showcase-project-book{background:#d0f568;color:#101414;padding:10px 12px;text-decoration:none}
 .showcase-project-links .showcase-project-book:hover{background:#e0ffa0}
+
+/* Mobile usability: comfortably tappable navigation, forms and CTAs site-wide. */
+@media(max-width:850px){
+  .menu-toggle{min-width:70px;min-height:46px;display:inline-flex;align-items:center;justify-content:center;gap:7px;cursor:pointer;font:700 13px 'DM Sans',Arial,sans-serif}
+  .main-nav.open{max-height:calc(100dvh - 75px);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 20px 36px #0008}
+  .main-nav>a{display:flex;align-items:center;min-height:44px;box-sizing:border-box}
+  .main-nav>.nav-cta{justify-content:space-between}
+}
+@media(max-width:580px){
+  .site-header{padding:0 17px}
+  .wordmark{gap:9px}
+  .wordmark-text{font-size:11px}
+  .wordmark-text small{font-size:7px}
+  .mark{font-size:29px}
+  .button,.nav-cta,.home-tile-book{min-height:44px;box-sizing:border-box}
+  input,select,textarea{font-size:16px}
+  .footer{gap:28px}
+  .footer-links a{display:inline-flex;align-items:center;min-height:40px}
+}

@@ -136,3 +136,66 @@
 .sports-social-link span{margin-left:6px}
 @media(max-width:720px){.sports-social-intro,.sports-social-grid{grid-template-columns:1fr}.sports-social-card{min-height:275px}}
 @media(prefers-reduced-motion:reduce){.sports-social-card{transition:none}}
+
+/* Mobile-first refinements: featured media, category pages and key actions. */
+.hub-hero--sports img{object-position:center 48%;filter:brightness(.89)}
+.hub-hero--sports:before{background:linear-gradient(90deg,#060b09ed 0%,#08100bbd 38%,#0509052a 78%,#04080612)}
+@media(max-width:900px){
+  .home-selection-inner{padding-inline:clamp(20px,5vw,45px)}
+  .home-selection h1{font-size:clamp(42px,9.5vw,84px);max-width:100%;overflow-wrap:normal}
+  .hub-hero-content{padding-inline:clamp(20px,5vw,45px)}
+  .hub-hero h1{font-size:clamp(48px,9.5vw,85px)}
+  .hub-cta{align-items:flex-start}
+}
+@media(max-width:650px){
+  .home-selection-inner{padding:clamp(58px,9vw,75px) 20px 55px}
+  .home-selection h1{font-size:clamp(36px,10.8vw,56px);line-height:.98;letter-spacing:-.065em;margin:19px 0}
+  .home-selection-description{font-size:16px;line-height:1.65}
+  .home-selection-choices{margin-top:28px;gap:14px}
+  .home-choice{min-height:242px;padding:22px 23px;box-shadow:0 15px 32px #0005}
+  .home-choice strong{font-size:clamp(25px,8vw,35px);letter-spacing:-.045em}
+  .home-choice-subline{font-size:12px}
+  .home-featured-film{padding:54px 20px 60px}
+  .home-featured-wrap{gap:22px}
+  .home-featured-film h2{font-size:clamp(36px,10vw,52px)}
+  .home-featured-video{width:100%;min-width:0}
+  .home-hubs{padding:58px 20px 64px}
+  .home-hubs h2{font-size:clamp(35px,9.5vw,51px)}
+  .home-hub-grid{gap:13px;margin-top:24px}
+  .home-hub{min-height:300px;padding:25px}
+  .home-hub h3{font-size:clamp(30px,8.5vw,39px)}
+  .hub-hero{min-height:585px;align-items:flex-end}
+  .hub-hero img{object-position:70% center}
+  .hub-hero:before{background:linear-gradient(180deg,#0509078a 0%,#05090765 28%,#050907d1 66%,#050907fb 100%)}
+  .hub-hero--sports img{object-position:73% 47%;filter:brightness(.84)}
+  .hub-hero--sports:before{background:linear-gradient(180deg,#03060593 0%,#0508056e 25%,#040706dd 65%,#040706fa 100%)}
+  .hub-hero-content{max-width:100%;width:100%;padding:110px 20px 54px}
+  .hub-hero h1{font-size:clamp(39px,10.7vw,56px);line-height:.96;letter-spacing:-.06em;margin:16px 0 19px;overflow-wrap:normal}
+  .hub-hero p:not(.eyebrow){font-size:15px;line-height:1.55;max-width:470px}
+  .hub-hero .hero-buttons{flex-direction:column;align-items:stretch;gap:19px;max-width:360px;margin-top:25px}
+  .hub-hero .hero-buttons .button{width:100%;box-sizing:border-box;justify-content:center;text-align:center;min-height:50px}
+  .hub-hero .hero-buttons .text-link{align-self:flex-start;min-height:35px;display:inline-flex;align-items:center}
+  .hub-library,.hub-sports-films{padding:54px 20px 62px}
+  .hub-library h2{font-size:clamp(33px,9.2vw,47px)}
+  .hub-intro{font-size:15px;line-height:1.6}
+  .hub-video-grid{gap:15px;margin-top:25px}
+  .hub-video-content{padding:16px 18px 19px}
+  .hub-video-content h3{font-size:clamp(18px,5.6vw,23px)}
+  .hub-sports-films .hub-video-content h3{font-size:clamp(18px,5.4vw,22px)}
+  .hub-crosslinks{gap:9px;margin-top:27px}
+  .hub-crosslinks a{padding:13px 15px;min-height:44px;display:inline-flex;align-items:center}
+  .hub-cta{padding:55px 20px 65px;gap:25px}
+  .hub-cta h2{font-size:clamp(34px,9vw,49px)}
+  .hub-cta .button{width:100%;max-width:380px;min-height:50px;box-sizing:border-box;text-align:center;justify-content:center}
+  .sports-social-section{padding:55px 20px 62px}
+  .sports-social-intro h2{font-size:clamp(35px,9vw,50px)}
+  .sports-social-grid{gap:13px;margin-top:24px}
+  .sports-social-card{min-height:245px;padding:24px}
+  .sports-social-card h3{font-size:clamp(33px,9vw,43px)}
+  .sports-social-link{display:inline-flex;align-items:center;min-height:44px}
+}
+@media(max-width:370px){
+  .home-selection h1{font-size:clamp(33px,10.2vw,39px)}
+  .home-choice{min-height:215px}
+  .hub-hero h1{font-size:clamp(36px,10vw,42px)}
+}
