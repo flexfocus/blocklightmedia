@@ -1,6 +1,9 @@
 [build]
   publish = "."
 
+[functions]
+  directory = "netlify/functions"
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -11,6 +14,27 @@
 # Generator source and docs live in the publish folder but should not be served.
 [[redirects]]
   from = "/site-src/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Because the static publish directory is the repository root, prevent
+# direct web access to server source and setup files. The runtime endpoint is
+# /.netlify/functions/create-checkout-session (notice the leading dot).
+[[redirects]]
+  from = "/netlify/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/package.json"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/STRIPE_INTEGRATION_TODO.md"
   to = "/404.html"
   status = 404
   force = true
