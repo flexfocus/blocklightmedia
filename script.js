@@ -97,7 +97,7 @@
   const videoPlayer = document.getElementById('showcaseDialogPlayer');
   const videoLink = document.getElementById('showcaseDialogLink');
   if (videoDialog && videoPlayer && videoLink && typeof videoDialog.showModal === 'function') {
-    const allowedIds = new Set(["oDHfoNzikMs","y_e1PIe9Qqs","ly8tHvCf37g","edYa5RIaICA","erreYvxjd5o","piOQQNpDo6w","YJ_BChpk0Ms"]);
+    const allowedIds = new Set(["Jjasc2D598k","oDHfoNzikMs","y_e1PIe9Qqs","ly8tHvCf37g","edYa5RIaICA","erreYvxjd5o","piOQQNpDo6w","YJ_BChpk0Ms"]);
     document.querySelectorAll('[data-youtube-id]').forEach((button) => {
       button.addEventListener('click', () => {
         const id = button.getAttribute('data-youtube-id');
