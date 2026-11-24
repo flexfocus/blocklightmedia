@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0d1011">
+<title>Checkout Preview | Block Light Media</title>
+<meta name="description" content="Private preview for approved Block Light Media client payments.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script src="https://js.stripe.com/dahlia/stripe.js"></script>
+<script defer src="/checkout.js"></script>
+<style>
+.checkout-shell{max-width:740px;margin:0 auto;padding:clamp(32px,6vw,72px) 20px 90px}
+.checkout-panel{background:#fff;color:#17201c;border:1px solid #dce2dd;border-radius:16px;padding:clamp(18px,4vw,40px);box-shadow:0 10px 35px #00000016}
+.checkout-panel h1{font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.1;margin:10px 0 16px}
+.checkout-panel p{line-height:1.65}
+.checkout-status{padding:14px 16px;border-radius:8px;background:#f1f5f2;color:#23332b;margin:18px 0}
+.checkout-note{font-size:.88rem;color:#526158}
+#checkout-form{min-height:80px}
+</style>
+</head>
+<body>
+<main class="checkout-shell" id="main">
+  <div class="checkout-panel">
+    <p class="eyebrow">BLOCK LIGHT MEDIA / PAYMENT</p>
+    <h1>Secure client checkout</h1>
+    <p>This form is for a booking or payment amount that Block Light Media has already approved with you. Confirm your service, date, and amount with us before paying.</p>
+    <div id="checkout-status" class="checkout-status" role="status" aria-live="polite">Checking payment setup…</div>
+    <div id="checkout-form" aria-label="Stripe secure payment form"></div>
+    <p class="checkout-note">Payments are processed by Stripe. This page does not confirm event availability or automatically unlock photos and videos.</p>
+    <p><a href="/contact.html#quote">Contact Block Light Media</a></p>
+  </div>
+</main>
+</body>
+</html>
