@@ -1,13 +1,15 @@
-/* Block Light Media basketball calendar. Do not insert real availability or payments into fake slots.
- * Connect paid Calendly event-type URLs only after payments and cancellation terms have been tested.
+/* TidyCal Free booking embeds. No booking type is enabled unless its real URL is configured.
+ * Paid TidyCal booking types should charge the deposit amount (not the package total).
+ * Remaining balance is collected later separately through a confirmed invoice.
  */
 (() => {
   'use strict';
+
   const BOOKING_LINKS = Object.freeze({
-    'individual-photo': '', // Paste the approved individual game photo Calendly event type URL
-    'team-photo': '',       // Paste the approved team game photo Calendly event type URL
-    'individual-video': '', // Paste the approved individual game video Calendly event type URL
-    'team-video': ''        // Paste the approved team game video Calendly event type URL
+    'individual-photo': '', // https://tidycal.com/YOURNAME/player-game-photos
+    'team-photo': '',       // https://tidycal.com/YOURNAME/team-game-photos
+    'individual-video': '', // https://tidycal.com/YOURNAME/player-highlight-video
+    'team-video': ''        // https://tidycal.com/YOURNAME/team-highlight-video
   });
   const PACKAGE_INFO = Object.freeze({
     'individual-photo': { name: 'Player Game Photos', deposit: 100, type: 'basketball-photographer-reading-pa' },
@@ -15,58 +17,70 @@
     'individual-video': { name: 'Player Highlight Video', deposit: 150, type: 'basketball-videographer-reading-pa' },
     'team-video': { name: 'Team Highlight Video', deposit: 200, type: 'basketball-videographer-reading-pa' }
   });
+
   const cards = [...document.querySelectorAll('[data-package]')];
   const embed = document.getElementById('booking-calendly');
   const fallback = document.getElementById('booking-unavailable');
   const summary = document.getElementById('booking-selected-summary');
   const contact = document.getElementById('booking-fallback');
   if (!cards.length || !embed || !fallback || !summary || !contact) return;
-  let active = '';
-  let scriptPromise;
-  const isSafeUrl = (value) => {
-    try { const u = new URL(value); return u.protocol === 'https:' && (u.hostname === 'calendly.com' || u.hostname.endsWith('.calendly.com')); } catch { return false; }
+
+  const getPath = (raw) => {
+    try {
+      const url = new URL(raw);
+      if (url.protocol !== 'https:' || url.hostname !== 'tidycal.com' || url.search || url.hash) return '';
+      const path = url.pathname.replace(/^\/+|\/+$/g, '');
+      return /^[a-z0-9_-]+\/[a-z0-9_-]+$/i.test(path) ? path : '';
+    } catch { return ''; }
   };
-  const loadCalendly = () => {
-    if (window.Calendly?.initInlineWidget) return Promise.resolve();
-    if (!scriptPromise) {
-      scriptPromise = new Promise((resolve, reject) => {
-        const s = document.createElement('script');
-        s.src = 'https://assets.calendly.com/assets/external/widget.js';
-        s.async = true;
-        s.onload = resolve;
-        s.onerror = reject;
-        document.head.appendChild(s);
-      });
-    }
-    return scriptPromise;
-  };
-  const show = async (key) => {
+
+  // Insert every approved booking type before the TidyCal embed loader runs.
+  // TidyCal initializes existing .tidycal-embed nodes when its script loads.
+  const available = {};
+  for (const key of Object.keys(PACKAGE_INFO)) {
+    const path = getPath(BOOKING_LINKS[key]);
+    if (!path) continue;
+    const wrapper = document.createElement('div');
+    wrapper.dataset.bookType = key;
+    wrapper.hidden = true;
+    const node = document.createElement('div');
+    node.className = 'tidycal-embed';
+    node.dataset.path = path;
+    node.dataset.showavatar = 'false';
+    wrapper.appendChild(node);
+    embed.appendChild(wrapper);
+    available[key] = wrapper;
+  }
+  if (Object.keys(available).length) {
+    const script = document.createElement('script');
+    script.src = 'https://asset-tidycal.b-cdn.net/js/embed.js';
+    script.async = true;
+    script.onerror = () => {
+      for (const wrapper of Object.values(available)) wrapper.hidden = true;
+      embed.hidden = true;
+      fallback.hidden = false;
+    };
+    document.head.appendChild(script);
+  }
+
+  function select(key) {
     if (!PACKAGE_INFO[key]) return;
-    active = key;
-    cards.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.package === key)));
+    cards.forEach(card => card.setAttribute('aria-pressed', String(card.dataset.package === key)));
     const info = PACKAGE_INFO[key];
     summary.textContent = info.name + ' — $' + info.deposit + ' deposit';
     contact.href = '/contact.html?service=' + encodeURIComponent(info.type) + '#quote';
-    const link = BOOKING_LINKS[key];
-    embed.replaceChildren();
-    if (!isSafeUrl(link)) {
-      embed.hidden = true;
-      fallback.hidden = false;
-      return;
-    }
-    fallback.hidden = true;
-    embed.hidden = false;
-    try {
-      await loadCalendly();
-      if (active !== key) return;
-      embed.replaceChildren();
-      window.Calendly.initInlineWidget({url: link, parentElement: embed, resize: true});
-    } catch (_) {
+    for (const wrapper of Object.values(available)) wrapper.hidden = true;
+    if (available[key]) {
+      available[key].hidden = false;
+      embed.hidden = false;
+      fallback.hidden = true;
+    } else {
       embed.hidden = true;
       fallback.hidden = false;
     }
-  };
-  cards.forEach(c => c.addEventListener('click', () => show(c.dataset.package)));
-  const initial = new URLSearchParams(location.search).get('package');
-  show(PACKAGE_INFO[initial] ? initial : 'individual-photo');
+  }
+
+  cards.forEach(card => card.addEventListener('click', () => select(card.dataset.package)));
+  const selected = new URLSearchParams(window.location.search).get('package');
+  select(PACKAGE_INFO[selected] ? selected : 'individual-photo');
 })();
