@@ -192,3 +192,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .home-tile-actions .home-tile-book{background:#d0f568;color:#101414;padding:11px 15px}
 .home-tile-actions .home-tile-book:hover{background:#e6ffaa}
 @media(max-width:650px){.home-book-actions{gap:17px}.home-tile-actions{align-items:flex-start}.home-tile-actions .home-tile-book{margin-left:auto}}
+
+/* Portfolio project labels and service-oriented calls to action */
+.showcase-project-rate{color:#415344;font-size:13px;line-height:1.55;min-height:42px;margin:4px 0 14px}
+.showcase-project-links{display:flex;align-items:center;flex-wrap:wrap;gap:12px;border-top:1px solid #d9e1d7;padding-top:14px}
+.showcase-project-links a{font-size:12px;font-weight:700}
+.showcase-project-links .showcase-project-book{background:#d0f568;color:#101414;padding:10px 12px;text-decoration:none}
+.showcase-project-links .showcase-project-book:hover{background:#e0ffa0}
